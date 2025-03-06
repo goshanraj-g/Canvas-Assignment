@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas Assignment</title>
-    <link rel="stylesheet" href="css/styles.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Canvas Assignment</title>
+   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
-    <h1>Shape it Off!</h1>
-    <canvas id="canvas" width="400" height="400"></canvas>
-    <br>
-    <input id="circle-button" type="button" value="Circle">
-    <input id="rectangle-button" type="button" value="Rectangle">
-    <input id="triangle-button" type="button" value="Triangle">
-    <br>
-    <input id="color-input" type="color">
-    <input id="size-input" type="range">
 
-    <br>
-    <input id="undo-button" type="button" value="Undo">
-    <input id="clear-button" type="button" value="Clear">
-    <script src="script.js"></script>
+<body>
+   <h1>Shape it Off!</h1>
+   <canvas id="canvas" width="400" height="400"></canvas>
+   <br>
+   <label for="label-input">Shape:</label>
+         <select id="userShape" required>
+           <option value="square">Square</option>
+           <option value="triangle">Triangle</option>
+           <option value="circle">Circle</option>
+         </select>
+   <br>
+   <label for="label-input">Color:</label>
+   <input id="color-input" type="color">
+
+
+   <br>
+
+
+   <label for="label-input">Radius/Width:</label>
+   <input id="size-input" type="range">
+
+
+   <br>
+   <input id="undo-button" type="button" value="Undo">
+   <input id="clear-button" type="button" value="Clear">
+   <script src="script.js"></script>
 </body>
+
 
 </html>
