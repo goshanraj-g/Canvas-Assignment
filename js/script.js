@@ -4,30 +4,6 @@ window.addEventListener("load", function () {
     const canvasOffSetX = c.offsetLeft;
     const canvasOffSetY = c.offsetTop;
 
-    c.height = window.innerHeight - canvasOffSetY;
-    c.width = window.innerWidth - canvasOffSetX;
-
-    let isPainting = false;
-    let lineWidth = 5;
-    let startX;
-    let startY;
-
-    c.addEventListener("mousedown", (e) => {
-        isPainting = true;
-        startX = e.clientX - canvasOffSetX;
-        startY = e.clientY - canvasOffSetY
-        
-        ctx.beginPath();
-        ctx.moveTo(startX, startY);;
-    })
-
-    c.addEventListener("mouseup", (e) => {
-        isPainting = false;
-        ctx.stroke();
-        ctx.beginPath();
-    })
-
-
 
 
     document.getElementById("circle-button")
