@@ -4,6 +4,28 @@ window.addEventListener("load", function () {
     const canvasOffSetX = c.offsetLeft;
     const canvasOffSetY = c.offsetTop;
 
+    c.addEventListener("mousedown", () => {
+        if
+        //create constructor, and call method
+
+
+    });
+
+    //event listener for click, and then we create constructor based on details
+    // 
+    Circle(usercolor, usersize)
+    Circle.draw()
+    class Circle {
+        constructor(radius, color) {
+            this.radius = radius;
+            this.color = color;
+        }
+
+        draw(ctx) {
+            ctx.beginPath();
+            ctx.arc
+        }
+    }
 
 
     document.getElementById("circle-button")
@@ -12,8 +34,10 @@ window.addEventListener("load", function () {
         });
 
 
-    document.getElementById("rectangle-button")
+    document.getElementById("square-button")
         .addEventListener("click", function (event) {
+            ctx.fillRect(25, 25, 100, 100);
+
 
         });
 
