@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Assignment</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
+  <body>
+    <h1>Click the Canvas to Draw!</h1>
+    <canvas id="canvas" width="700" height="375"></canvas>
 
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Canvas Assignment</title>
-   <link rel="stylesheet" href="css/styles.css">
-</head>
+    <div class="controls">
+      <div class="form-column">
+        <div class="form-group">
+          <label for="userShape">Shapes:</label>
+          <select id="userShape" required>
+            <option value="square">Square</option>
+            <option value="triangle">Triangle</option>
+            <option value="circle">Circle</option>
+          </select>
+        </div>
 
+        <div class="form-group">
+          <label for="color-input">Colours:</label>
+          <input id="color-input" type="color" />
+        </div>
 
-<body>
-   <h1>Shape it Off!</h1>
-   <canvas id="canvas" width="400" height="400"></canvas>
-   <br>
-   <label for="label-input">Shape:</label>
-         <select id="userShape" required>
-           <option value="square">Square</option>
-           <option value="triangle">Triangle</option>
-           <option value="circle">Circle</option>
-         </select>
-   <br>
-   <label for="label-input">Color:</label>
-   <input id="color-input" type="color">
+        <div class="form-group">
+          <label for="size-input">Width px:</label>
+          <input type="number" id="size-input" min="1" required />
+        </div>
+      </div>
 
+      <div class="button-group">
+        <input id="undo-button" type="button" value="Undo" />
+        <input id="clear-button" type="button" value="Clear" />
+      </div>
+    </div>
 
-   <br>
-
-
-   <label for="label-input">Radius/Width:</label>
-   <input id="size-input" type="range">
-
-
-   <br>
-   <input id="undo-button" type="button" value="Undo">
-   <input id="clear-button" type="button" value="Clear">
-   <script src="script.js"></script>
-</body>
-
-
+    <script src="script.js"></script>
+  </body>
 </html>
