@@ -11,17 +11,18 @@ Description: The HTML for the Canvas Assignment
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Canvas Assignment</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/script.js"></script>
   </head>
 
   <body>
-    <h1>Click the Canvas to Draw!</h1>
-    <canvas id="canvas" width="700" height="375"></canvas>
+    <h1>Click on Canvas to Draw!</h1>
+    <canvas id="canvas" width="800" height="425"></canvas>
 
     <div class="controls">
       <div class="form-column">
         <div class="form-group">
-          <label for="userShape">Shapes:</label>
-          <select id="userShape" required>
+          <label for="user-shape">Shapes:</label>
+          <select id="user-shape" required>
             <option value="square">Square</option>
             <option value="triangle">Triangle</option>
             <option value="circle">Circle</option>
@@ -45,6 +46,5 @@ Description: The HTML for the Canvas Assignment
       </div>
     </div>
 
-    <script src="script.js"></script>
   </body>
 </html>

@@ -5,69 +5,63 @@ Description: The JS consisting of all Canvas Drawing Functionallity
              and logic for persisting drawings
 */
 
+// NOTE: NEED TO FIGURE OUT HOW TO USE LOCAL STORAGE FOR THIS
 window.addEventListener("load", function () {
+
     let c = document.getElementById("canvas");
     let ctx = c.getContext("2d");
-    const canvasOffSetX = c.offsetLeft;
-    const canvasOffSetY = c.offsetTop;
+    let clear = document.getElementById("clear-button");
+    let undo = document.getElementById("undo-button");
 
-    c.addEventListener("mousedown", () => {
-        if
-        //create constructor, and call method
-
-
-    });
-
-    //event listener for click, and then we create constructor based on details
-    // 
-    Circle(usercolor, usersize)
-    Circle.draw()
     class Circle {
-        constructor(radius, color) {
+        constructor(x, y, radius, color) {
+            this.x = x;
+            this.y = y
             this.radius = radius;
             this.color = color;
         }
 
         draw(ctx) {
             ctx.beginPath();
-            ctx.arc
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            ctx.closePath();
         }
     }
 
+    function getMousePosition(event) {
+        const rect = c.getBoundingClientRect();
+        const x = event.clientX - rect.left; 
+        const y = event.clientY - rect.top;
+        return { x, y };
+    }
 
-    document.getElementById("circle-button")
-        .addEventListener("click", function (event) {
+    c.addEventListener("click", (event) => {
+        let shape = document.getElementById("user-shape").value;
+        let color = document.getElementById("color-input").value;
+        let size = parseInt(document.getElementById("size-input").value);
+        let { x, y } = getMousePosition(event)
 
-        });
+        if (shape === "circle") {
+            const circle = new Circle(x, y, size / 2, color);
+            circle.draw(ctx);
+        }
+        else if (shape === "square") {
+            // DRAW SQUARE LOGIC
+        }
+        else {
+            /// THIS LAST ONE IS TRIANGLE LOGIC
+        }
 
+    });
 
-    document.getElementById("square-button")
-        .addEventListener("click", function (event) {
-            ctx.fillRect(25, 25, 100, 100);
+    undo.addEventListener("click", function () {
+        //Undo logic of most recent shape made
+    });
 
+    clear.addEventListener("click", function () {
+        ctx.clearRect(0, 0, c.width, c.height);
+    });
 
-        });
-
-
-    document.getElementById("triangle-button")
-        .addEventListener("click", function (event) {
-
-        });
-
-
-    document.getElementById("undo-button")
-        .addEventListener("click", function (event) {
-
-        });
-
-
-    document.getElementById("clear-button")
-        .addEventListener("click", function (event) {
-            ctx.clearRect(0, 0, c.width, c.height);
-        });
-
-
-
-
-
-})
+});
