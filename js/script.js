@@ -111,19 +111,21 @@ window.addEventListener("load", function () {
     let shapeType = document.getElementById("user-shape").value;
     let color = document.getElementById("color-input").value;
     let size = parseInt(document.getElementById("size-input").value);
-    let { x, y } = getMousePosition(event);
-    let drawnShape;
-    if (shapeType === "circle") {
-      drawnShape = new Circle(x, y, size / 2, color);
-    } else if (shapeType === "square") {
-      drawnShape = new Square(x, y, size, color);
-    } else if (shapeType === "rectangle") {
-      drawnShape = new Rectangle(x, y, size * 2, size, color);
-    } else {
-      drawnShape = new Triangle(x, y, size, color);
+    if (size > 0) {
+      let { x, y } = getMousePosition(event);
+      let drawnShape;
+      if (shapeType === "circle") {
+        drawnShape = new Circle(x, y, size / 2, color);
+      } else if (shapeType === "square") {
+        drawnShape = new Square(x, y, size, color);
+      } else if (shapeType === "rectangle") {
+        drawnShape = new Rectangle(x, y, size * 2, size, color);
+      } else {
+        drawnShape = new Triangle(x, y, size, color);
+      }
+      drawnShape.draw(ctx);
+      shapesHistory(drawnShape);
     }
-    drawnShape.draw(ctx);
-    shapesHistory(drawnShape);
   });
 
   undo.addEventListener("click", function () {
