@@ -54,6 +54,7 @@ window.addEventListener("load", function () {
       this.width = width;
       this.color = color;
     }
+
     /**
      * Draws the square on the provided canvas context
      * @param {canvasContext} ctx - The canvas rendering context
@@ -86,7 +87,6 @@ window.addEventListener("load", function () {
      * Draws the triangle on the provided canvas context
      * @param {canvasContext} ctx - The canvas rendering context
      */
-
     draw(ctx) {
       const base = (2 * this.height) / Math.sqrt(3); // formula for the base using the 30/60/90 formula for equaliterals
       const x1 = this.x;
@@ -127,6 +127,10 @@ window.addEventListener("load", function () {
       this.color = color;
     }
 
+    /**
+     * Draws the rectangle on the provided canvas context
+     * @param {canvasContext} ctx - The canvas rendering context
+     */
     draw(ctx) {
       ctx.beginPath();
       ctx.rect(this.x, this.y, this.width, this.height);
@@ -134,29 +138,6 @@ window.addEventListener("load", function () {
       ctx.fill();
       ctx.closePath();
     }
-  }
-
-  /**
-   * Adds a shape to the history array and saves it in local storage.
-   *
-   * @param {Object} shape - The shape object to store
-   */
-  function shapesHistory(shape) {
-    shapes.push(shape);
-    localStorage.setItem("history", JSON.stringify(shapes));
-  }
-
-  /**
-   * Gets the mouse position relative to the canvas.
-   *
-   * @param {MouseEvent} event - The mouse event
-   * @returns {{x: number, y: number}} - The relative mouse coordinates
-   */
-  function getMousePosition(event) {
-    const rect = c.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    return { x, y };
   }
 
   c.addEventListener("click", (event) => {
@@ -191,6 +172,35 @@ window.addEventListener("load", function () {
     }
   });
 
+  clear.addEventListener("click", function () {
+    ctx.clearRect(0, 0, c.width, c.height);
+    shapes = [];
+    localStorage.setItem("history", JSON.stringify(shapes));
+  });
+
+  /**
+   * Adds a shape to the history array and saves it in local storage.
+   *
+   * @param {Object} shape - The shape object to store
+   */
+  function shapesHistory(shape) {
+    shapes.push(shape);
+    localStorage.setItem("history", JSON.stringify(shapes));
+  }
+
+  /**
+   * Gets the mouse position relative to the canvas.
+   *
+   * @param {MouseEvent} event - The mouse event
+   * @returns {{x: int, y: int}} - The relative mouse coordinates
+   */
+  function getMousePosition(event) {
+    const rect = c.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    return { x, y };
+  }
+
   /**
    * Redraws all shapes from the history onto the canvas.
    */
@@ -214,10 +224,6 @@ window.addEventListener("load", function () {
     });
   }
 
-  clear.addEventListener("click", function () {
-    ctx.clearRect(0, 0, c.width, c.height);
-    shapes = [];
-    localStorage.setItem("history", JSON.stringify(shapes));
-  });
   redrawCanvas();
+
 });
