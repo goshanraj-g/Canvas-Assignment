@@ -78,6 +78,24 @@ window.addEventListener("load", function () {
     }
   }
 
+  class Rectangle {
+    constructor(x, y, width, height, color) {
+      this.x = x;
+      this.y = y;
+      this.width = width;
+      this.height = height;
+      this.color = color;
+    }
+
+    draw(ctx) {
+      ctx.beginPath();
+      ctx.rect(this.x, this.y, this.width, this.height);
+      ctx.fillStyle = this.color;
+      ctx.fill();
+      ctx.closePath();
+    }
+  }
+
   function shapesHistory(shape) {
     shapes.push(shape);
     localStorage.setItem("history", JSON.stringify(shapes));
@@ -100,6 +118,8 @@ window.addEventListener("load", function () {
       drawnShape = new Circle(x, y, size / 2, color);
     } else if (shapeType === "square") {
       drawnShape = new Square(x, y, size, color);
+    } else if (shapeType === "rectangle") {
+      drawnShape = new Rectangle(x, y, size * 2, size, color);
     } else {
       drawnShape = new Triangle(x, y, size, color);
     }
@@ -120,6 +140,14 @@ window.addEventListener("load", function () {
     shapes.forEach((shape) => {
       if (shape.radius) {
         new Circle(shape.x, shape.y, shape.radius, shape.color).draw(ctx);
+      } else if (shape.width && shape.height) {
+        new Rectangle(
+          shape.x,
+          shape.y,
+          shape.width,
+          shape.height,
+          shape.color
+        ).draw(ctx);
       } else if (shape.width) {
         new Square(shape.x, shape.y, shape.width, shape.color).draw(ctx);
       } else if (shape.height) {
