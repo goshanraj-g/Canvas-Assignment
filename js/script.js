@@ -108,10 +108,12 @@ window.addEventListener("load", function () {
   }
 
   c.addEventListener("click", (event) => {
+    let sound = new Audio("media/Pew Sound Effect.mp3");
     let shapeType = document.getElementById("user-shape").value;
     let color = document.getElementById("color-input").value;
     let size = parseInt(document.getElementById("size-input").value);
     if (size > 0) {
+      sound.play();
       let { x, y } = getMousePosition(event);
       let drawnShape;
       if (shapeType === "circle") {
