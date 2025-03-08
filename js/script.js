@@ -94,7 +94,7 @@ window.addEventListener("load", function () {
       const circle = new Circle(x, y, size / 2, color);
       circle.draw(ctx);
     } else if (shape === "square") {
-      const square = new Square(x, y, size / 2, color);
+      const square = new Square(x, y, size, color);
       square.draw(ctx);
     } else {
       const triangle = new Triangle(x, y, size, color);
