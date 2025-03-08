@@ -1,3 +1,10 @@
+/** 
+Author: Goshanraj Govindaraj (#) & Arkel Ziko (#400586552)
+Date: Thursday, March 6, 2025 at 8:35 AM
+Description: The JS consisting of all Canvas Drawing Functionallity
+             and logic for persisting drawings
+*/
+
 window.addEventListener("load", function () {
     let c = document.getElementById("canvas");
     let ctx = c.getContext("2d");
