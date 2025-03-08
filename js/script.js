@@ -3,7 +3,7 @@ Author: Goshanraj Govindaraj (400599969) & Arkel Ziko (#400586552)
 Date: Thursday, March 6, 2025 at 8:35 AM
 Description: The JS consisting of all Canvas Drawing Functionallity
              and logic for persisting drawings
-*/
+**/
 
 // NOTE: NEED TO FIGURE OUT HOW TO USE LOCAL STORAGE FOR THIS
 window.addEventListener("load", function () {
@@ -11,6 +11,7 @@ window.addEventListener("load", function () {
   let ctx = c.getContext("2d");
   let clear = document.getElementById("clear-button");
   let undo = document.getElementById("undo-button");
+  let shapes = JSON.parse(localStorage.getItem("history")) || [];
 
   class Circle {
     constructor(x, y, radius, color) {
@@ -77,6 +78,11 @@ window.addEventListener("load", function () {
     }
   }
 
+  function shapesHistory(shape) {
+    shapes.push(shape);
+    localStorage.setItem("history", JSON.stringify(shapes));
+  }
+
   function getMousePosition(event) {
     const rect = c.getBoundingClientRect();
     const x = event.clientX - rect.left;
@@ -85,28 +91,47 @@ window.addEventListener("load", function () {
   }
 
   c.addEventListener("click", (event) => {
-    let shape = document.getElementById("user-shape").value;
+    let shapeType = document.getElementById("user-shape").value;
     let color = document.getElementById("color-input").value;
     let size = parseInt(document.getElementById("size-input").value);
     let { x, y } = getMousePosition(event);
-
-    if (shape === "circle") {
-      const circle = new Circle(x, y, size / 2, color);
-      circle.draw(ctx);
-    } else if (shape === "square") {
-      const square = new Square(x, y, size, color);
-      square.draw(ctx);
+    let drawnShape;
+    if (shapeType === "circle") {
+      drawnShape = new Circle(x, y, size / 2, color);
+    } else if (shapeType === "square") {
+      drawnShape = new Square(x, y, size, color);
     } else {
-      const triangle = new Triangle(x, y, size, color);
-      triangle.draw(ctx);
+      drawnShape = new Triangle(x, y, size, color);
     }
+    drawnShape.draw(ctx);
+    shapesHistory(drawnShape);
   });
 
   undo.addEventListener("click", function () {
-    //Undo logic of most recent shape made
+    if (shapes.length > 0) {
+      shapes.pop();
+      localStorage.setItem("history", JSON.stringify(shapes));
+      ctx.clearRect(0, 0, c.width, c.height);
+      redrawCanvas();
+    }
   });
+
+  function redrawCanvas() {
+    shapes.forEach((shape) => {
+      if (shape.radius) {
+        new Circle(shape.x, shape.y, shape.radius, shape.color).draw(ctx);
+      } else if (shape.width) {
+        new Square(shape.x, shape.y, shape.width, shape.color).draw(ctx);
+      } else if (shape.height) {
+        new Triangle(shape.x, shape.y, shape.height, shape.color).draw(ctx);
+      }
+    });
+  }
 
   clear.addEventListener("click", function () {
     ctx.clearRect(0, 0, c.width, c.height);
+    shapes = [];
+    localStorage.setItem("history", JSON.stringify(shapes));
   });
+  redrawCanvas();
 });
