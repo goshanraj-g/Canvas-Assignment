@@ -12,6 +12,13 @@ window.addEventListener("load", function () {
   let undo = document.getElementById("undo-button");
   let shapes = JSON.parse(localStorage.getItem("history")) || [];
 
+  /** Represents a circle
+   *
+   * @param {number} x - The x-coordinate of the circle
+   * @param {number} y - The y-coordinate of the circle
+   * @param {number} radius - The radius of the circle
+   * @param {string} color - The fill color of the circle
+   */
   class Circle {
     constructor(x, y, radius, color) {
       this.x = x;
@@ -20,6 +27,10 @@ window.addEventListener("load", function () {
       this.color = color;
     }
 
+    /**
+     * Draws the circle on the provided canvas context
+     * @param {canvasContext} ctx - The canvas rendering context
+     */
     draw(ctx) {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
@@ -29,6 +40,13 @@ window.addEventListener("load", function () {
     }
   }
 
+  /** Represents a Squqare
+   *
+   * @param {number} x - The x-coordinate of the square
+   * @param {number} y - The y-coordinate of the square
+   * @param {number} width - The radius of the square
+   * @param {string} color - The fill color of the square
+   */
   class Square {
     constructor(x, y, width, color) {
       this.x = x;
@@ -36,7 +54,10 @@ window.addEventListener("load", function () {
       this.width = width;
       this.color = color;
     }
-
+    /**
+     * Draws the square on the provided canvas context
+     * @param {canvasContext} ctx - The canvas rendering context
+     */
     draw(ctx) {
       ctx.beginPath();
       ctx.rect(this.x, this.y, this.width, this.width);
@@ -46,6 +67,13 @@ window.addEventListener("load", function () {
     }
   }
 
+  /** Represents a Triangle
+   *
+   * @param {number} x - The x-coordinate of the triangle
+   * @param {number} y - The y-coordinate of the triangle
+   * @param {number} height - The height of the triangle
+   * @param {string} color - The fill color of the triangle
+   */
   class Triangle {
     constructor(x, y, height, color) {
       this.x = x;
@@ -54,8 +82,13 @@ window.addEventListener("load", function () {
       this.color = color;
     }
 
+    /**
+     * Draws the triangle on the provided canvas context
+     * @param {canvasContext} ctx - The canvas rendering context
+     */
+
     draw(ctx) {
-      const base = (2 * this.height) / Math.sqrt(3); //formula for the base using the 30/60/90 formula for equaliterals
+      const base = (2 * this.height) / Math.sqrt(3); // formula for the base using the 30/60/90 formula for equaliterals
       const x1 = this.x;
       const y1 = this.y;
 
@@ -77,6 +110,14 @@ window.addEventListener("load", function () {
     }
   }
 
+  /** Represents a rectangle
+   *
+   * @param {number} x - The x-coordinate of the rectangle
+   * @param {number} y - The y-coordinate of the rectangle
+   * @param {number} width - The width of the rectangle
+   * @param {number} height - The height of the rectangle
+   * @param {string} color - The fill color of the rectangl
+   */
   class Rectangle {
     constructor(x, y, width, height, color) {
       this.x = x;
@@ -95,11 +136,22 @@ window.addEventListener("load", function () {
     }
   }
 
+  /**
+   * Adds a shape to the history array and saves it in local storage.
+   *
+   * @param {Object} shape - The shape object to store
+   */
   function shapesHistory(shape) {
     shapes.push(shape);
     localStorage.setItem("history", JSON.stringify(shapes));
   }
 
+  /**
+   * Gets the mouse position relative to the canvas.
+   *
+   * @param {MouseEvent} event - The mouse event
+   * @returns {{x: number, y: number}} - The relative mouse coordinates
+   */
   function getMousePosition(event) {
     const rect = c.getBoundingClientRect();
     const x = event.clientX - rect.left;
@@ -139,6 +191,9 @@ window.addEventListener("load", function () {
     }
   });
 
+  /**
+   * Redraws all shapes from the history onto the canvas.
+   */
   function redrawCanvas() {
     shapes.forEach((shape) => {
       if (shape.radius) {
