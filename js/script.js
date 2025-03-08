@@ -30,6 +30,23 @@ window.addEventListener("load", function () {
         }
     }
 
+    class Square {
+        constructor(x, y, width, color) {
+            this.x = x;
+            this.y = y
+            this.width = width;
+            this.color = color;
+        }
+
+        draw(ctx) {
+            ctx.beginPath();
+            ctx.rect(this.x, this.y, this.width, this.width);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            ctx.closePath();
+        }
+    }
+
     function getMousePosition(event) {
         const rect = c.getBoundingClientRect();
         const x = event.clientX - rect.left; 
@@ -48,7 +65,8 @@ window.addEventListener("load", function () {
             circle.draw(ctx);
         }
         else if (shape === "square") {
-            // DRAW SQUARE LOGIC
+            const square = new Square(x, y, size/2, color)
+            square.draw(ctx);
         }
         else {
             /// THIS LAST ONE IS TRIANGLE LOGIC
