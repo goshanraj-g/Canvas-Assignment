@@ -5,92 +5,94 @@ Description: The CSS for the frontend/UI of the Canvas
 */
 
 body {
-    padding: 0;
-    margin: 0;
-    justify-content: center;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1362%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='rgba(0%2c 172%2c 229%2c 1)'%3e%3c/rect%3e%3cpath d='M150.786 675.170L136.249 509.003-15.38 689.708z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1681.009 145.754L1750.635-18.273 1469.781-40.698z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M2606.291 386.859L2561.609 176.647 2268.632 348.776z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M866.958 282.023L920.638 623.046 1158.443 437.253z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1781.931 1136.137L2003.819 929.223 1575.017 914.249z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M95.722%2c431.847C134.048%2c432.431%2c171.126%2c412.524%2c188.816%2c378.52C205.407%2c346.628%2c193.561%2c309.793%2c175.34%2c278.804C157.437%2c248.355%2c131.043%2c220.458%2c95.722%2c220.188C60.039%2c219.916%2c31.587%2c246.54%2c13.971%2c277.573C-3.384%2c308.147%2c-9.048%2c344.693%2c7.413%2c375.757C24.914%2c408.783%2c58.35%2c431.278%2c95.722%2c431.847' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M320 120L400 80 360 200z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1500 900L1600 850 1550 980z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1800 300L1900 250 1850 400z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M200 800L300 750 250 900z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1200 500L1300 450 1250 600z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M800 200L900 150 850 300z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M400 600L500 550 450 700z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1400 700L1500 650 1450 800z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1362'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1362%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='rgba(0%2c 172%2c 229%2c 1)'%3e%3c/rect%3e%3cpath d='M150.786 675.170L136.249 509.003-15.38 689.708z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1681.009 145.754L1750.635-18.273 1469.781-40.698z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M2606.291 386.859L2561.609 176.647 2268.632 348.776z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M866.958 282.023L920.638 623.046 1158.443 437.253z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1781.931 1136.137L2003.819 929.223 1575.017 914.249z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M95.722%2c431.847C134.048%2c432.431%2c171.126%2c412.524%2c188.816%2c378.52C205.407%2c346.628%2c193.561%2c309.793%2c175.34%2c278.804C157.437%2c248.355%2c131.043%2c220.458%2c95.722%2c220.188C60.039%2c219.916%2c31.587%2c246.54%2c13.971%2c277.573C-3.384%2c308.147%2c-9.048%2c344.693%2c7.413%2c375.757C24.914%2c408.783%2c58.35%2c431.278%2c95.722%2c431.847' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M320 120L400 80 360 200z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1500 900L1600 850 1550 980z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1800 300L1900 250 1850 400z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M200 800L300 750 250 900z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1200 500L1300 450 1250 600z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M800 200L900 150 850 300z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M400 600L500 550 450 700z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1400 700L1500 650 1450 800z' fill='rgba(255%2c255%2c255%2c 0.1)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1362'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
 }
 
 h1 {
-    color: white;
+  color: white;
 }
 
 #canvas {
-    background-color: white;
-    margin-bottom: 15px;
-    border: 5px solid black;
-    text-align: center;
-    overscroll-behavior: none;
+  background-color: white;
+  margin-bottom: 15px;
+  border: 5px solid black;
+  text-align: center;
+  overscroll-behavior: none;
 }
 
 .controls {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    max-width: 750px;
-    margin: 0 auto;
-    margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  max-width: 750px;
+  margin: 0 auto;
+  margin-top: 3%;
 }
 
 .form-column {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
 }
 
 .form-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 label {
-    color: white;
-    font-weight: bold;
-    min-width: 120px;
-    text-align: right;
+  color: white;
+  font-weight: bold;
+  min-width: 120px;
+  text-align: right;
 }
 
-select, input[type="color"], input[type="number"] {
-    padding: 8px;
-    border: 2px solid black;
-    border-radius: 6px;
-    background: white;
-    font-size: 14px;
-    flex-grow: 1;
+select,
+input[type="color"],
+input[type="number"] {
+  padding: 8px;
+  border: 2px solid black;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+  flex-grow: 1;
 }
 
 input[type="number"] {
-    width: 80px;
-    padding: 8px 10px;
+  width: 80px;
+  padding: 8px 10px;
 }
 
 input[type="color"] {
-    height: 36px;
-    padding: 3px;
-    cursor: pointer;
+  height: 36px;
+  padding: 3px;
+  cursor: pointer;
 }
 
 .button-group {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    justify-content: center;
-    margin-top: 0;
-    width: 150px;
-    margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 0;
+  width: 150px;
+  margin-right: 50px;
 }
 
 input[type="button"] {
-    width: 100%;
-    background-color: lightcoral;
-    cursor: pointer;
-    padding: 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 2px solid black;
-    color: white;
+  width: 100%;
+  background-color: lightcoral;
+  cursor: pointer;
+  padding: 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid black;
+  color: white;
 }
