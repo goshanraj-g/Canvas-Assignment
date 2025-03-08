@@ -5,7 +5,6 @@ Description: The JS consisting of all Canvas Drawing Functionallity
              and logic for persisting drawings
 **/
 
-// NOTE: NEED TO FIGURE OUT HOW TO USE LOCAL STORAGE FOR THIS
 window.addEventListener("load", function () {
   let c = document.getElementById("canvas");
   let ctx = c.getContext("2d");
