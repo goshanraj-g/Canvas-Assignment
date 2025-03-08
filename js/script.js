@@ -29,6 +29,23 @@ window.addEventListener("load", function () {
     }
   }
 
+  class Square {
+    constructor(x, y, width, color) {
+      this.x = x;
+      this.y = y;
+      this.width = width;
+      this.color = color;
+    }
+
+    draw(ctx) {
+      ctx.beginPath();
+      ctx.rect(this.x, this.y, this.width, this.width);
+      ctx.fillStyle = this.color;
+      ctx.fill();
+      ctx.closePath();
+    }
+  }
+
   class Triangle {
     constructor(x, y, height, color) {
       this.x = x;
@@ -77,7 +94,8 @@ window.addEventListener("load", function () {
       const circle = new Circle(x, y, size / 2, color);
       circle.draw(ctx);
     } else if (shape === "square") {
-      // DRAW SQUARE LOGIC
+      const square = new Square(x, y, size / 2, color);
+      square.draw(ctx);
     } else {
       const triangle = new Triangle(x, y, size, color);
       triangle.draw(ctx);
