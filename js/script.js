@@ -149,7 +149,7 @@ window.addEventListener("load", function () {
   // ---------CANVAS EVENT LISTENERS--------- //
 
   c.addEventListener("click", (event) => {
-    let sound = new Audio("media/Pew Sound Effect.mp3");
+    let sound = new Audio("media/sounds/Pew Sound Effect.mp3");
     let shapeType = document.getElementById("user-shape").value;
     let color = document.getElementById("color-input").value;
     let size = parseInt(document.getElementById("size-input").value);
