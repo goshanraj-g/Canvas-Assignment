@@ -6,6 +6,10 @@ Description: The JS consisting of all Canvas Drawing Functionallity
 **/
 
 window.addEventListener("load", function () {
+
+
+  // ---------VARIABLES AND CLASSES--------- //
+
   let c = document.getElementById("canvas");
   let ctx = c.getContext("2d");
   let clear = document.getElementById("clear-button");
@@ -140,6 +144,9 @@ window.addEventListener("load", function () {
     }
   }
 
+
+  // ---------CANVAS EVENT LISTENERS--------- //
+
   c.addEventListener("click", (event) => {
     let sound = new Audio("media/Pew Sound Effect.mp3");
     let shapeType = document.getElementById("user-shape").value;
@@ -178,6 +185,9 @@ window.addEventListener("load", function () {
     localStorage.setItem("history", JSON.stringify(shapes));
   });
 
+
+  // ---------CANVAS FUNCTIONS--------- //
+
   /**
    * Adds a shape to the history array and saves it in local storage.
    *
@@ -209,13 +219,7 @@ window.addEventListener("load", function () {
       if (shape.radius) {
         new Circle(shape.x, shape.y, shape.radius, shape.color).draw(ctx);
       } else if (shape.width && shape.height) {
-        new Rectangle(
-          shape.x,
-          shape.y,
-          shape.width,
-          shape.height,
-          shape.color
-        ).draw(ctx);
+        new Rectangle(shape.x, shape.y, shape.width, shape.height,shape.color).draw(ctx);
       } else if (shape.width) {
         new Square(shape.x, shape.y, shape.width, shape.color).draw(ctx);
       } else if (shape.height) {
