@@ -110,6 +110,7 @@ window.addEventListener("load", function () {
 
       ctx.fillStyle = this.color;
       ctx.fill();
+      ctx.strokeStyle = this.color;
       ctx.stroke();
     }
   }
